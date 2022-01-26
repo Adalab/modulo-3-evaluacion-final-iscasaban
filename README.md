@@ -1,23 +1,44 @@
-# Repaso final: ejercicio Linkedin
+# Module 3: Final Assessment Exercise Inma Sánchez Casabán
 
-En este ejercicio vamos a realizar un directorio de personas, al estilo de LinkedIn, con unos filtros que permiten seleccionar las personas que aparecen.
+The exercise consists of developing a web page with a list of Harry Potter characters, which we can filter by the name of the character. We are going to use React to do it.
 
-Vamos a mostrar de cada persona:
+Link: (http://beta.adalab.es/modulo-3-evaluacion-final-iscasaban/)
 
-- nombre
-- foto
-- ciudad
-- edad
+## List of characters
 
-Vamos a poder filtrar por:
+We are going to use the https://hp-api.herokuapp.com/ service that returns information about the Harry Potter characters filtered by the house to which they belong. On each one, we are going to render at least:
 
-- ciudad
-- género
+- Photo
+- Name
+- Species
 
-El listado de ciudades lo vamos a generar a partir de las ciudades de las personas que devuelva el API.
+## Filter by Character
 
-Al hacer clic sobre una persona, deberían poder verse los datos individuales en detalle.
+Now that we have the list of characters on the screen, the second part consists of being able to search for them by name. For that, we add an input to the interface, so that when writing a name, only the characters whose name contains the written letters remain in the interface.
 
-El resultado debe ser parecido a este diseño de LinkedIn:
+## Filtered by House
 
-![Image text](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/4f413237-e40a-40b8-bd33-01ae97ceed73/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220124%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220124T173249Z&X-Amz-Expires=86400&X-Amz-Signature=ce0aca1ac54129d501bbe02ee48f4dc3c59aa70e95b76ccbdfbf2a499e7103ab&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22&x-id=GetObject)
+Now that we have the list of characters on the screen, and filtered by name, the next part is to be able to search for them by house. For that, we add a select to the interface, so that when selecting a house, only the characters whose house is selected remain on the interface.
+
+## Character roster components
+
+The list must have the following components as a minimum:
+
+- Component for name filter.
+- Component for the listing.
+- Component for the card of each character in the list.
+- Component for the detail of each character.
+
+## Character detail
+
+We are going to implement a new functionality: when you click on a character card, its information will appear full screen. To do this we will use routes and React Router DOM. In the detail screen, it will appear in addition to the photo, name, the house to which it belongs, if it is alive or dead, gender, species and alternative names in case it has them.
+
+## Programming languages, designing & development tools.
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="48" width="48" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" height="48" width="48" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="48" width="48" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gulp/gulp-plain.svg" height="48" width="48" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" height="48" width="48" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="48" width="48" /> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="48" width="48"/>
