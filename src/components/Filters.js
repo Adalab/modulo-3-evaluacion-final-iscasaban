@@ -1,14 +1,24 @@
 import FilterName from './FilterName';
-//import FilterGender from './FilterGender';
+import FilterHouse from './FilterHouse';
 
 const Filter = (props) => {
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  };
   return (
     <section>
-      <form>
+      <form action="" className="form" onSubmit={handleSubmit}>
+        <label className="" htmlFor="name">
+          Busca por personaje:
+        </label>
         <FilterName
           handleFilter={props.handleFilter}
           FilterName={props.FilterName}
         />
+        <label className="" htmlFor="name">
+          Selecciona la casa:
+        </label>
+        <FilterHouse />
         {/* 
         <FilterGender />
          */}

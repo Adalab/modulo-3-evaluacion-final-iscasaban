@@ -7,11 +7,9 @@ function FilterName(props) {
   };
   return (
     <>
-      <label className="form__label display-block" htmlFor="name">
-        Filtrar por nombre:
-      </label>
       <input
-        className="form__input-text"
+        className=""
+        placeholder="Personaje"
         type="text"
         name="name"
         id="name"
