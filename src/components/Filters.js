@@ -18,7 +18,10 @@ const Filter = (props) => {
         <label className="" htmlFor="name">
           Selecciona la casa:
         </label>
-        <FilterHouse />
+        <FilterHouse
+          handleFilter={props.handleFilter}
+          FilterHouse={props.FilterHouse}
+        />
         {/* 
         <FilterGender />
          */}

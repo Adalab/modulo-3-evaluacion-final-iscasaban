@@ -7,7 +7,12 @@ function FilterHouse(props) {
   };
   return (
     <>
-      <select defaultValue={'Gryffindor'} name="Casa" id="Casa">
+      <select
+        defaultValue={'Gryffindor'}
+        name="Casa"
+        id="Casa"
+        onChange={handleInput}
+      >
         <option value="Gryffindor">Gryffindor</option>
         <option value="Ravenclaw">Ravenclaw</option>
         <option value="Hufflepuff">Hufflepuff</option>

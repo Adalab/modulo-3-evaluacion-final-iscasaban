@@ -13,18 +13,24 @@ function App() {
 
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
+  
+  function searchByHouse(house) {
+    getApiData(house).then((charactersData) => {
+      setCharacters(charactersData);
+    });
+  }
 
   //useEffect recibe 2 parámetros: 1 lo que quiero ejecutar, y 2 un array que dependiendo de cuántas veces quiero que se ejecute, puede ir lleno o vacío. como queremos que solo lo cargue una sola vez ponemos un array vacío
   useEffect(() => {
-    getApiData('gryffindor').then((charactersData) => {
-      setCharacters(charactersData);
-    });
+    searchByHouse('gryffindor');
   }, []);
 
   //funcion manejadora de los filtros
   const handleFilter = (data) => {
     if (data.key === 'name') {
       setFilterName(data.value);
+    } else if (data.key === 'house') {
+      searchByHouse(data.value);
     }
   };
 
