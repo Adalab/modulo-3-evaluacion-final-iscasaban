@@ -13,7 +13,7 @@ const Character = (props) => {
       : props.character.image;
   };
   return (
-    <Link to={`/user/${props.character.id}`}>
+    <Link to={`/character/${props.character.id}`}>
       <img
         className="card__img"
         src={getImage()}
@@ -21,9 +21,6 @@ const Character = (props) => {
         title={`Foto de ${props.character.name}`}
       />
       <h4 className="card__title">{props.character.name}</h4>
-      {/* <p className="card__description">
-      {props.character.species} / {getGender()}
-    </p> */}
     </Link>
   );
 };

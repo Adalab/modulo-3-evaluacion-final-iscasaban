@@ -22,9 +22,6 @@ const Filter = (props) => {
           handleFilter={props.handleFilter}
           FilterHouse={props.FilterHouse}
         />
-        {/* 
-        <FilterGender />
-         */}
       </form>
     </section>
   );

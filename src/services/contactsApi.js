@@ -9,10 +9,14 @@ const getApiData = (house) => {
     .then((data) => {
       const cleanData = data.map((character, index) => {
         return {
-          id: `${index}${character.name}${character.actor}`,
+          id: `${index}${character.name}`,
           image: character.image,
           name: character.name,
           species: character.species,
+          house: character.house,
+          alive: character.alive,
+          gender: character.gender,
+          altNames: character.alternate_names,
         };
       });
       return cleanData;

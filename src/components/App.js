@@ -1,10 +1,10 @@
+import '../styles/components/Main.scss';
 import { useState, useEffect } from 'react';
 import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
 import getApiData from '../services/contactsApi';
 import Filters from './Filters';
-//import CharacterList from './CharacterList';
-import '../styles/components/Main.scss';
 import CharacterList from './CharacterList';
+import CharacterDetail from './CharacterDetail';
 
 function App() {
   //el fetch debe hacerse al cargar la página y una sola vez. Por eso usamos el hook useEffect
@@ -13,7 +13,10 @@ function App() {
 
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
-  
+  const routeData = useRouteMatch('/character/characterId');
+  const characterId = routeData !== null ? routeData.params.characterId : '';
+  console.log(`id:${characterId}`);
+
   function searchByHouse(house) {
     getApiData(house).then((charactersData) => {
       setCharacters(charactersData);
@@ -42,6 +45,14 @@ function App() {
 
   //Por ej, si quisiéramos que se ejecutara cada vez que cambia un input que está en una variable estado, pondríamos la variable dentro del array
 
+  const renderCharacterDetail = (props) => {
+    const routeId = props.match.params.characterId;
+    const foundCharacter = characters.find(
+      (character) => character.id === routeId
+    );
+    return <CharacterDetail character={foundCharacter} />;
+  };
+
   return (
     <>
       <h1>Harry Potter - Buscador de personajes</h1>
@@ -55,6 +66,7 @@ function App() {
             <CharacterList characters={filteredCharacters} />
           </section>
         </Route>
+        <Route path="/character/:characterId" render={renderCharacterDetail} />
       </Switch>
     </>
   );
