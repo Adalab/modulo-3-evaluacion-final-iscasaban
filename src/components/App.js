@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
 import getApiData from '../services/contactsApi';
-//import Filters from './Filters';
+import Filters from './Filters';
 //import CharacterList from './CharacterList';
 import '../styles/components/Main.scss';
 import CharacterList from './CharacterList';
@@ -45,10 +45,10 @@ function App() {
           <option value="Slytherin">Slytherin</option>
         </select>
       </form>
-      <h1 className="title--big">Directorio de personas</h1>
-      <div className="col2">
+
+      <section className="col2">
         <CharacterList characters={characters} />
-      </div>
+      </section>
     </>
   );
 }

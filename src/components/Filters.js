@@ -1,11 +1,15 @@
 import FilterName from './FilterName';
-import FilterGender from './FilterGender';
+//import FilterGender from './FilterGender';
 
-const Filter = () => {
+const Filter = (props) => {
   return (
     <section>
       <form>
-        {/* <FilterName />
+        <FilterName
+          handleFilter={props.handleFilter}
+          FilterName={props.FilterName}
+        />
+        {/* 
         <FilterGender />
          */}
       </form>
