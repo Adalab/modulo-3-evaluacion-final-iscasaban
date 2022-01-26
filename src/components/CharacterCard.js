@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import placeholder from '../images/placeholder-hp.png';
+//import placeholder from '../images/placeholder-hp.png';
 
 const Character = (props) => {
   //función condicional para mostrar el género en español. Ojo, si hay más de 2 opciones, no podemos hacer un ternario, tendríamos que hacer un else if por tantos valores como tengamos.
@@ -7,20 +7,21 @@ const Character = (props) => {
   //   return props.character.gender === 'female' ? 'Mujer' : 'Hombre';
   // };
 
-  const getImage = () => {
-    return props.character.image === ''
-      ? `${placeholder}`
-      : props.character.image;
-  };
+  // const getImage = () => {
+  //   return props.character.image === ''
+  //     ? `${placeholder}`
+  //     : props.character.image;
+  // };
   return (
     <Link to={`/character/${props.character.id}`}>
       <img
         className="card__img"
-        src={getImage()}
+        src={props.character.image}
         alt={`Foto de ${props.character.name}`}
         title={`Foto de ${props.character.name}`}
       />
       <h4 className="card__title">{props.character.name}</h4>
+      <h4 className="card__title">{props.character.species}</h4>
     </Link>
   );
 };

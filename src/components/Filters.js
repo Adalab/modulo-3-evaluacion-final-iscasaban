@@ -13,14 +13,14 @@ const Filter = (props) => {
         </label>
         <FilterName
           handleFilter={props.handleFilter}
-          FilterName={props.FilterName}
+          filterName={props.filterName}
         />
         <label className="" htmlFor="name">
           Selecciona la casa:
         </label>
         <FilterHouse
           handleFilter={props.handleFilter}
-          FilterHouse={props.FilterHouse}
+          filterHouse={props.filterHouse}
         />
       </form>
     </section>

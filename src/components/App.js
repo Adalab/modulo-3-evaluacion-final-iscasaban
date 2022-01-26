@@ -13,9 +13,7 @@ function App() {
 
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
-  const routeData = useRouteMatch('/character/characterId');
-  const characterId = routeData !== null ? routeData.params.characterId : '';
-  console.log(`id:${characterId}`);
+  const [filterHouse, setFilterHouse] = useState('Gryffindor');
 
   function searchByHouse(house) {
     getApiData(house).then((charactersData) => {
@@ -25,7 +23,7 @@ function App() {
 
   //useEffect recibe 2 parámetros: 1 lo que quiero ejecutar, y 2 un array que dependiendo de cuántas veces quiero que se ejecute, puede ir lleno o vacío. como queremos que solo lo cargue una sola vez ponemos un array vacío
   useEffect(() => {
-    searchByHouse('gryffindor');
+    searchByHouse(filterHouse);
   }, []);
 
   //funcion manejadora de los filtros
@@ -33,6 +31,7 @@ function App() {
     if (data.key === 'name') {
       setFilterName(data.value);
     } else if (data.key === 'house') {
+      setFilterHouse(data.value);
       searchByHouse(data.value);
     }
   };
@@ -59,7 +58,11 @@ function App() {
       <Switch>
         <Route exact path="/">
           <section>
-            <Filters handleFilter={handleFilter} filterName={filterName} />
+            <Filters
+              handleFilter={handleFilter}
+              filterName={filterName}
+              filterHouse={filterHouse}
+            />
           </section>
 
           <section className="">

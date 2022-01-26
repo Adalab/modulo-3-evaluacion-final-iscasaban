@@ -11,7 +11,7 @@ function CharacterDetail(props) {
       />
       <h4 className="">{props.character.name}</h4>
       <p className="">Casa: {props.character.house} </p>
-      <p className="">Estatus: {props.character.house} </p>
+      <p className="">Estatus: {props.character.alive} </p>
       <p className="">Género: {props.character.gender}</p>
       <p className="">Especie: {props.character.species}</p>
       <p className="">Otros nombres: {props.character.alternate_names}</p>

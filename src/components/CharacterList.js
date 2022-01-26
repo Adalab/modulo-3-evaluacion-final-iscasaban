@@ -9,11 +9,20 @@ function CharacterList(props) {
       </li>
     );
   });
-  return (
-    <section>
-      <ul className="cards">{characterElements}</ul>
-    </section>
-  );
+
+  if (props.characters.length === 0) {
+    return (
+      <section>
+        <h4>No existen personajes con ese nombre.</h4>
+      </section>
+    );
+  } else {
+    return (
+      <section>
+        <ul className="cards">{characterElements}</ul>
+      </section>
+    );
+  }
 }
 
 export default CharacterList;

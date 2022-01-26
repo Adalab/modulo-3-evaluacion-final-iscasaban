@@ -1,3 +1,5 @@
+import ReactPropTypesSecret from 'prop-types/lib/ReactPropTypesSecret';
+
 function FilterHouse(props) {
   const handleInput = (ev) => {
     props.handleFilter({
@@ -5,10 +7,11 @@ function FilterHouse(props) {
       value: ev.currentTarget.value,
     });
   };
+
   return (
     <>
       <select
-        defaultValue={'Gryffindor'}
+        defaultValue={props.filterHouse}
         name="Casa"
         id="Casa"
         onChange={handleInput}
