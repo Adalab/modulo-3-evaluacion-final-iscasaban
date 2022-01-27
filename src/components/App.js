@@ -25,7 +25,7 @@ function App() {
     searchByHouse(filterHouse);
   }, [filterHouse]);
 
-  //funcion manejadora de los filtros
+  //funcion manejadora de los filtros.
   const handleFilter = (data) => {
     if (data.key === 'name') {
       setFilterName(data.value);
