@@ -1,5 +1,3 @@
-import ReactPropTypesSecret from 'prop-types/lib/ReactPropTypesSecret';
-
 function FilterHouse(props) {
   const handleInput = (ev) => {
     props.handleFilter({

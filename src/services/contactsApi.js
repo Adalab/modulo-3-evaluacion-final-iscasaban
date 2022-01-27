@@ -4,6 +4,8 @@ import placeholder from '../images/placeholder-hp.png';
 
 //Esta función debe retornar una promesa, que es la que voy a recoger en App para pintar los datos
 
+// En la llamada a la API aplico el filtro para mostrar la especie, imagen placeholder, status y género para hacer una sola llamada a la API y limpiar el código de CharacterCard.
+
 const getImage = (image) => {
   return image === '' ? `${placeholder}` : image;
 };
@@ -26,6 +28,7 @@ const getStatus = (alive) => {
   return alive === true ? `Vivo` : `Muerto`;
 };
 
+//función condicional para mostrar el género en español. creamos una función que muestre Mujer u Hombre según el gender de la api. A continuación sólo falta llamar a la función y ejecutar: {getGender()} 
 const getGender = (gender) => {
   return gender === 'male' ? `Hombre` : `Mujer`;
 };

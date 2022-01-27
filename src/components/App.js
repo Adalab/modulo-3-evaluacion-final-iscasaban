@@ -1,13 +1,12 @@
 import '../styles/components/Main.scss';
 import { useState, useEffect } from 'react';
-import { Route, Switch, useRouteMatch, Link } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import getApiData from '../services/contactsApi';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 
 function App() {
-  //el fetch debe hacerse al cargar la página y una sola vez. Por eso usamos el hook useEffect
 
   //para filtrar creamos una variable de estado en la que guardamos cada uno de los valores de los filtros porque cada vez que aplique un filtro se va a volver a renderizar la página:
 
@@ -24,7 +23,7 @@ function App() {
   //useEffect recibe 2 parámetros: 1 lo que quiero ejecutar, y 2 un array que dependiendo de cuántas veces quiero que se ejecute, puede ir lleno o vacío. como queremos que solo lo cargue una sola vez ponemos un array vacío
   useEffect(() => {
     searchByHouse(filterHouse);
-  }, []);
+  }, [filterHouse]);
 
   //funcion manejadora de los filtros
   const handleFilter = (data) => {
@@ -41,8 +40,6 @@ function App() {
       .toLocaleLowerCase()
       .includes(filterName.toLocaleLowerCase());
   });
-
-  //Por ej, si quisiéramos que se ejecutara cada vez que cambia un input que está en una variable estado, pondríamos la variable dentro del array
 
   const renderCharacterDetail = (props) => {
     const routeId = props.match.params.characterId;
