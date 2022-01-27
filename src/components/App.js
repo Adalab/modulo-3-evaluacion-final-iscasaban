@@ -23,7 +23,7 @@ function App() {
   //useEffect recibe 2 parámetros: 1 lo que quiero ejecutar, y 2 un array que dependiendo de cuántas veces quiero que se ejecute, puede ir lleno o vacío. como queremos que solo lo cargue una sola vez ponemos un array vacío
   useEffect(() => {
     searchByHouse(filterHouse);
-  }, []);
+  }, [filterHouse]);
 
   //funcion manejadora de los filtros
   const handleFilter = (data) => {
