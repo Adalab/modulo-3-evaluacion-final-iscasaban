@@ -1,23 +1,30 @@
 import { Link } from 'react-router-dom';
 function CharacterDetail(props) {
   return (
-    <section>
-      <Link to="/"> Volver al inicio</Link>
-      <img
-        className=""
-        src={props.character.image}
-        alt={`Foto de ${props.character.name}`}
-        title={`Foto de ${props.character.name}`}
-      />
-      <article>
-        <h4 className="">{props.character.name}</h4>
-        <p className="">Casa: {props.character.house} </p>
-        <p className="">Estatus: {props.character.alive} </p>
-        <p className="">Género: {props.character.gender}</p>
-        <p className="">Especie: {props.character.species}</p>
-        <p className="">Otros nombres: {props.character.alternate_names}</p>
-      </article>
-    </section>
+    <>
+      <Link className="link" to="/">
+        {' '}
+        Volver al inicio
+      </Link>
+      <section className="character__detail">
+        <img
+          className="character__img detail__img"
+          src={props.character.image}
+          alt={`Foto de ${props.character.name}`}
+          title={`Foto de ${props.character.name}`}
+        />
+        <article className="detail">
+          <h4 className="detail__text">{props.character.name}</h4>
+          <p className="detail__text">Casa: {props.character.house} </p>
+          <p className="detail__text">Estatus: {props.character.alive} </p>
+          <p className="detail__text">Género: {props.character.gender}</p>
+          <p className="detail__text">Especie: {props.character.species}</p>
+          <p className="detail__text">
+            Otros nombres: {props.character.alternate_names}
+          </p>
+        </article>
+      </section>
+    </>
   );
 }
 export default CharacterDetail;

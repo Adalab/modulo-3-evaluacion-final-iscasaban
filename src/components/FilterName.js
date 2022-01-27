@@ -9,8 +9,8 @@ function FilterName(props) {
   return (
     <>
       <input
-        className=""
-        placeholder="Personaje"
+        className="form__input"
+        placeholder="Ej. Harry"
         type="text"
         name="name"
         id="name"

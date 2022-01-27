@@ -9,6 +9,7 @@ function FilterHouse(props) {
   return (
     <>
       <select
+        className="form__input"
         defaultValue={props.filterHouse}
         name="Casa"
         id="Casa"

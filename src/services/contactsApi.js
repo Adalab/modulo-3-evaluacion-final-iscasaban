@@ -2,8 +2,6 @@ import placeholder from '../images/placeholder-hp.png';
 
 //En este archivo hacemos el fetch para la petición a la api
 
-//Esta función debe retornar una promesa, que es la que voy a recoger en App para pintar los datos
-
 // En la llamada a la API aplico el filtro para mostrar la especie, imagen placeholder, status y género para hacer una sola llamada a la API y limpiar el código de CharacterCard.
 
 const getImage = (image) => {
@@ -25,18 +23,18 @@ const getSpecies = (species) => {
 };
 
 const getStatus = (alive) => {
-  return alive === true ? `Vivo` : `Muerto`;
+  return alive === true ? `Vivo 🧡` : `Muerto 💀`;
 };
 
-//función condicional para mostrar el género en español. creamos una función que muestre Mujer u Hombre según el gender de la api. A continuación sólo falta llamar a la función y ejecutar: {getGender()} 
+//ternario para mostrar el género en español. creamos una función que muestre Mujer u Hombre según el gender de la api. A continuación sólo falta llamar a la función y ejecutar: {getGender()}
+
 const getGender = (gender) => {
-  return gender === 'male' ? `Hombre` : `Mujer`;
+  return gender === 'male' ? `Hombre ♂️` : `Mujer ♀️`;
 };
 
 const getApiData = (house) => {
-  //como debe retornar una promesa, comenzamos con el return. El fetch siempre es igual: llamo a la api para pedir datos y los transformo a formato JSON
   return fetch(`http://hp-api.herokuapp.com/api/characters/house/${house}`)
-    .then((response) => response.json()) //then recibe como parámetro una función de tipo arrow, se suele usar response, pero podemos llamarlo como queramos
+    .then((response) => response.json())
     .then((data) => {
       const cleanData = data.map((character, index) => {
         return {
@@ -51,11 +49,7 @@ const getApiData = (house) => {
         };
       });
       return cleanData;
-    }); //aquí ya tenemos los datos del api, pero aquí limpiamos para que solo nos retorne los datos que nos interesen. Como queremos todos los elementos del array pero transformados, usamos el método funcional de map. Usaremos filter cuando no queramos todos los datos, sino sólo los que cumplan cierta condición.
-
-  //debemos seleccionar los datos que nos pidan (aquí, nombre, foto, ciudad, género y edad. Pero si hay un id, también nos interesa)
+    });
 };
 
 export default getApiData;
-
-//exportamos la función para usarla en el componente App

@@ -1,7 +1,6 @@
 # Module 3: Final Assessment Exercise Inma Sánchez Casabán
 
-![Logo Harry Potter](/src/images/header_test1.png)
-
+![Logo Buscador Harry Potter](/src/images/header_harry_potter.png)
 
 The exercise consists of developing a web page with a list of Harry Potter characters, which we can filter by the name of the character. We are going to use React to do it.
 
@@ -23,7 +22,7 @@ Now that we have the list of characters on the screen, the second part consists 
 
 Now that we have the list of characters on the screen, and filtered by name, the next part is to be able to search for them by house. For that, we add a select to the interface, so that when selecting a house, only the characters whose house is selected remain on the interface.
 
-## Character roster components
+## React components
 
 The list must have the following components as a minimum:
 
@@ -31,6 +30,10 @@ The list must have the following components as a minimum:
 - Component for the listing.
 - Component for the card of each character in the list.
 - Component for the detail of each character.
+
+This project has the following component structure:
+
+![Diagram React Components](/src/images/buscador-harry-potter.drawio.png)
 
 ## Character detail
 
@@ -45,3 +48,7 @@ We are going to implement a new functionality: when you click on a character car
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" height="36" width="36" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="36" width="36" /> 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="36" width="36"/>
+
+## Contact
+
+Inma Sánchez Casabán - Iscasaban(https://github.com/iscasaban)

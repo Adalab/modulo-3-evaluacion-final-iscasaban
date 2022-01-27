@@ -1,13 +1,13 @@
 import '../styles/components/Main.scss';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Header from './Header';
 import getApiData from '../services/contactsApi';
 import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 
 function App() {
-
   //para filtrar creamos una variable de estado en la que guardamos cada uno de los valores de los filtros porque cada vez que aplique un filtro se va a volver a renderizar la página:
 
   const [characters, setCharacters] = useState([]);
@@ -51,9 +51,9 @@ function App() {
 
   return (
     <>
-      <h1>Harry Potter - Buscador de personajes</h1>
       <Switch>
         <Route exact path="/">
+          <Header />
           <section>
             <Filters
               handleFilter={handleFilter}
@@ -62,7 +62,7 @@ function App() {
             />
           </section>
 
-          <section className="">
+          <section>
             <CharacterList characters={filteredCharacters} />
           </section>
         </Route>
