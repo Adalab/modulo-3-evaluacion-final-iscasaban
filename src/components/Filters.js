@@ -1,7 +1,8 @@
 import FilterName from './FilterName';
 import FilterHouse from './FilterHouse';
+import FilterGender from './FilterGender';
 
-const Filter = (props) => {
+const Filters = (props) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
@@ -22,9 +23,16 @@ const Filter = (props) => {
           handleFilter={props.handleFilter}
           filterHouse={props.filterHouse}
         />
+        <label className="form__title" htmlFor="name">
+          Género:
+        </label>
+        <FilterGender
+          handleFilter={props.handleFilter}
+          FilterGender={props.filterGender}
+        />
       </form>
     </section>
   );
 };
 
-export default Filter;
+export default Filters;

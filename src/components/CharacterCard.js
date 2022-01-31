@@ -10,7 +10,7 @@ const Character = (props) => {
         title={`Foto de ${props.character.name}`}
       />
       <h4 className="character__title">{props.character.name}</h4>
-      <h4 className="character__title">{props.character.species}</h4>
+      <h4 className="character__subtitle">{props.character.species}</h4>
     </Link>
   );
 };

@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import placeholder from '../images/placeholder-hp.png';
+
 function CharacterDetail(props) {
   return (
     <>
@@ -20,11 +23,33 @@ function CharacterDetail(props) {
           <p className="detail__text">Género: {props.character.gender}</p>
           <p className="detail__text">Especie: {props.character.species}</p>
           <p className="detail__text">
-            Otros nombres: {props.character.alternate_names}
+            Otros nombres: {props.character.altNames}
           </p>
         </article>
       </section>
     </>
   );
 }
+
+CharacterDetail.defaultProps = {
+  character: {
+    name: 'Personaje desconocido',
+    image: placeholder,
+    house: 'Desconocida',
+    alive: 'Desconocido',
+    gender: 'Desconocido',
+    species: 'Desconocida',
+    altNames: ['Desconocido'],
+  },
+};
+
+CharacterDetail.propTypes = {
+  name: PropTypes.string,
+  house: PropTypes.string,
+  alive: PropTypes.bool,
+  gender: PropTypes.string,
+  species: PropTypes.string,
+  altNames: PropTypes.array,
+};
+
 export default CharacterDetail;

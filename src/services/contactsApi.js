@@ -10,15 +10,15 @@ const getImage = (image) => {
 
 const getSpecies = (species) => {
   if (species === 'human') {
-    return 'Humano';
+    return '🔮 Humano';
   } else if (species === 'half-giant') {
-    return 'Semi-gigante';
+    return '🗿 Semi-gigante';
   } else if (species === 'werewolf') {
-    return 'Hombre-lobo';
+    return '🐺 Hombre-lobo';
   } else if (species === 'ghost') {
-    return 'Fantasma';
+    return '👻 Fantasma';
   } else {
-    return 'Muggle';
+    return '👤 Muggle';
   }
 };
 

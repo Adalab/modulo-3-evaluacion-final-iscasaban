@@ -13,6 +13,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [filterName, setFilterName] = useState('');
   const [filterHouse, setFilterHouse] = useState('Gryffindor');
+  const [filterGender, setFilterGender] = useState('All');
 
   function searchByHouse(house) {
     getApiData(house).then((charactersData) => {
@@ -20,7 +21,6 @@ function App() {
     });
   }
 
-  //useEffect recibe 2 parámetros: 1 lo que quiero ejecutar, y 2 un array que dependiendo de cuántas veces quiero que se ejecute, puede ir lleno o vacío. como queremos que solo lo cargue una sola vez ponemos un array vacío
   useEffect(() => {
     searchByHouse(filterHouse);
   }, [filterHouse]);
@@ -32,15 +32,24 @@ function App() {
     } else if (data.key === 'house') {
       setFilterHouse(data.value);
       searchByHouse(data.value);
+    } else if (data.key === 'gender') {
+      setFilterGender(data.value);
     }
   };
 
-  const filteredCharacters = characters.filter((character) => {
-    return character.name
-      .toLocaleLowerCase()
-      .includes(filterName.toLocaleLowerCase());
-  });
-
+  const filteredCharacters = characters
+    .filter((character) => {
+      return character.name
+        .toLocaleLowerCase()
+        .includes(filterName.toLocaleLowerCase());
+    })
+    .filter((character) => {
+      if (filterGender === 'All') {
+        return true;
+      } else {
+        return character.gender === filterGender;
+      }
+    });
   const renderCharacterDetail = (props) => {
     const routeId = props.match.params.characterId;
     const foundCharacter = characters.find(
@@ -59,6 +68,7 @@ function App() {
               handleFilter={handleFilter}
               filterName={filterName}
               filterHouse={filterHouse}
+              filterGender={filterGender}
             />
           </section>
 
