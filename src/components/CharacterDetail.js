@@ -32,19 +32,19 @@ function CharacterDetail(props) {
 }
 
 CharacterDetail.defaultProps = {
-    name: 'Personaje desconocido',
-    image: placeholder,
-    house: 'Desconocida',
-    alive: 'Desconocido',
-    gender: 'Desconocido',
-    species: 'Desconocida',
-    altNames: ['Desconocido'],
+  name: 'Personaje desconocido',
+  image: placeholder,
+  house: 'Desconocida',
+  alive: 'Desconocido',
+  gender: 'Desconocido',
+  species: 'Desconocida',
+  altNames: ['Desconocido'],
 };
 
 CharacterDetail.propTypes = {
   name: PropTypes.string,
   house: PropTypes.string,
-  alive: PropTypes.bool,
+  alive: PropTypes.string,
   gender: PropTypes.string,
   species: PropTypes.string,
   altNames: PropTypes.array,

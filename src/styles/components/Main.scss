@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&display=swap');
 
+
 * {
   font-family: 'Bodoni Moda';
   color: whitesmoke;
@@ -20,11 +21,12 @@ a {
 .header {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   margin-bottom: 2.5rem;
 }
 .header__img {
   padding-top: 2.5rem;
+  max-width: 350px;
 }
 .header__title {
   color: #890000;
