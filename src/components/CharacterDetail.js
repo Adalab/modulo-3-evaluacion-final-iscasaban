@@ -32,7 +32,6 @@ function CharacterDetail(props) {
 }
 
 CharacterDetail.defaultProps = {
-  character: {
     name: 'Personaje desconocido',
     image: placeholder,
     house: 'Desconocida',
@@ -40,7 +39,6 @@ CharacterDetail.defaultProps = {
     gender: 'Desconocido',
     species: 'Desconocida',
     altNames: ['Desconocido'],
-  },
 };
 
 CharacterDetail.propTypes = {
