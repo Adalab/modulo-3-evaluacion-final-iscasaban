@@ -1,6 +1,7 @@
 import FilterName from './FilterName';
 import FilterHouse from './FilterHouse';
 import FilterGender from './FilterGender';
+import FilterAlive from './FilterAlive';
 
 const Filters = (props) => {
   const handleSubmit = (ev) => {
@@ -29,6 +30,10 @@ const Filters = (props) => {
         <FilterGender
           handleFilter={props.handleFilter}
           FilterGender={props.filterGender}
+        />
+        <FilterAlive
+          handleFilter={props.handleFilter}
+          FilterAlive={props.filterAlive}
         />
       </form>
     </section>

@@ -14,6 +14,7 @@ function App() {
   const [filterName, setFilterName] = useState('');
   const [filterHouse, setFilterHouse] = useState('Gryffindor');
   const [filterGender, setFilterGender] = useState('All');
+  const [filterAlive, setFilterAlive] = useState('Todos');
 
   function searchByHouse(house) {
     getApiData(house).then((charactersData) => {
@@ -34,6 +35,8 @@ function App() {
       searchByHouse(data.value);
     } else if (data.key === 'gender') {
       setFilterGender(data.value);
+    } else if (data.key === 'alive') {
+      setFilterAlive(data.value);
     }
   };
 
@@ -48,6 +51,15 @@ function App() {
         return true;
       } else {
         return character.gender === filterGender;
+      }
+    })
+    .filter((character) => {
+      if (filterAlive === 'Todos') {
+        return true;
+      } else if (filterAlive === 'Vivo') {
+        return character.alive === 'Vivo 🧡';
+      } else if (filterAlive === 'Muerto') {
+        return character.alive === `Muerto 💀`;
       }
     });
   const renderCharacterDetail = (props) => {
@@ -69,6 +81,7 @@ function App() {
               filterName={filterName}
               filterHouse={filterHouse}
               filterGender={filterGender}
+              filterAlive={filterAlive}
             />
           </section>
 
